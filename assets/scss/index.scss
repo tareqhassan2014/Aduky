@@ -1,0 +1,107 @@
+@import './components/common';
+@import './components/navigation';
+@import './components/banner';
+@import './components/hero';
+@import './components/subject';
+@import './components/course';
+@import './components/beInstructor';
+@import './components/features';
+@import './components/category';
+@import './components/carousel-01';
+@import './components/institute';
+@import './components/instructors';
+@import './components/discount';
+@import './components/ask';
+@import './components/testimonial';
+@import './components/teacher';
+@import './components/blog';
+@import './components/faq';
+@import './components/pricing';
+@import './components/product';
+@import './components/contact__info';
+@import './components/contact__quick';
+@import './components/shop';
+@import './components/slogan';
+@import './components/live';
+@import './components/cart';
+@import './components/cta';
+@import './components/footer';
+
+.billing__from {
+    .select-wrapper {
+        position: relative;
+
+        &::after {
+            content: '\f107';
+            right: 2.6rem;
+            top: 1.4rem;
+            position: absolute;
+            color: #53545b;
+            font-family: fontawesome;
+            font-weight: 500;
+        }
+    }
+
+    select {
+        appearance: none;
+    }
+}
+
+.member--student {
+    @include md {
+        margin-top: 2rem;
+    }
+}
+
+.free-join-img {
+    text-align: center;
+
+    img {
+        width: 75%;
+    }
+
+    @include md {
+        margin-top: 5rem;
+    }
+}
+
+.trusted-brand {
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8rem;
+
+        @include md {
+            gap: 5rem;
+        }
+
+        @include sm {
+            gap: 2rem;
+        }
+
+        img {
+            width: 9rem;
+
+            @include sm {
+                width: 7rem;
+            }
+        }
+    }
+}
+
+.error {
+    height: calc(100vh - 9.5rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-inline: 2rem;
+
+    &__container {
+        img {
+            width: 50rem;
+            max-width: 100%;
+        }
+    }
+}

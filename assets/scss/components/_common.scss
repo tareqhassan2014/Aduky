@@ -1,0 +1,757 @@
+@import '../abstracts/index.scss';
+
+/*-----------------------------------------------------------------------------------
+
+  Name: Aduky
+
+-----------------------------------------------------------------------------------
+
+/************ TABLE OF CONTENTS ***************
+
+    01. Common CSS
+    02. Navigation Bar CSS
+    03. Hero CSS
+    04. Category CSS
+    05. Banner CSS
+    06. Course CSS
+    07. Events CSS
+    08. Price CSS
+    10. Product CSS
+    11. Services CSS
+    00. Footer CSS
+
+
+**********************************************/
+
+/*----------------------------------------*/
+/*  01. Theme default CSS
+/*----------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Khula:wght@300;400;600;700;800&family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+
+    @include xxl {
+        font-size: 60%;
+    }
+
+    @include xl {
+        font-size: 55%;
+    }
+
+    @include lg {
+        font-size: 50%;
+    }
+
+    @include md {
+        font-size: 45%;
+    }
+
+    @include sm {
+        font-size: 43.75%;
+    }
+}
+
+body {
+    font-family: var(--NunitoSans);
+    font-size: 1.6rem;
+    font-weight: normal;
+    color: var(--black);
+}
+
+a {
+    text-decoration: none;
+}
+
+.w-img {
+    & img {
+        width: 100%;
+    }
+}
+.m-img {
+    & img {
+        max-width: 100%;
+    }
+}
+
+a,
+.btn,
+button,
+span,
+p,
+i,
+input,
+select,
+textarea,
+li,
+img,
+svg path,
+*::after,
+*::before,
+.transition-3,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @include transition(0.3s);
+}
+
+.btn {
+    color: var(--white);
+}
+
+a:focus,
+.button:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+a:focus,
+a:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+a,
+button {
+    color: inherit;
+    outline: none;
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:focus {
+    outline: 0;
+    border: 0;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--Khula);
+    color: var(--heading-color);
+    margin-top: 0px;
+    font-weight: 700;
+
+    @include transition(0.3s);
+}
+
+h1 {
+    font-size: 5.6rem;
+    line-height: 6.6rem;
+}
+h2 {
+    font-size: 4.8rem;
+    line-height: 5.8rem;
+
+    @include sm {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+}
+h3 {
+    font-size: 4rem;
+    line-height: 5rem;
+
+    @include lg {
+        font-size: 3.5rem;
+        line-height: 3.5rem;
+    }
+
+    @include sm {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+}
+h4 {
+    font-size: 3.2rem;
+    line-height: 4.2rem;
+}
+h5 {
+    font-size: 2.4rem;
+    line-height: 3.4rem;
+}
+h6 {
+    font-size: 2rem;
+    line-height: 3rem;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+li {
+    list-style: none;
+}
+
+p {
+    font-family: var(--NunitoSans);
+    font-size: 1.6rem;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+*::-moz-selection {
+    background: var(--primary);
+    color: var(--white);
+    text-shadow: none;
+}
+::-moz-selection {
+    background: var(--primary);
+    color: var(--white);
+    text-shadow: none;
+}
+::selection {
+    background: var(--primary);
+    color: var(--white);
+    text-shadow: none;
+}
+
+form input,
+form select,
+form textarea {
+    outline: none;
+    border: 1px solid #e0e0e0;
+}
+
+.offcanvas {
+    --bs-offcanvas-width: 300px;
+}
+
+/*----------------------------------------
+    - Input Placeholder
+-----------------------------------------*/
+*::-moz-placeholder {
+    color: var(--placeholder-input-color);
+    font-size: 1.4rem;
+    opacity: 1;
+}
+*::placeholder {
+    color: var(--placeholder-input-color);
+    font-size: 1.4rem;
+    opacity: 1;
+}
+
+/*---------------------------------------
+    - Common Classes
+-----------------------------------------*/
+
+.w-90 {
+    width: 90%;
+}
+
+.section__margin {
+    margin-top: 12rem;
+}
+
+.fix {
+    overflow: hidden;
+}
+.clear {
+    clear: both;
+}
+
+.f-left {
+    float: left;
+}
+.f-right {
+    float: right;
+}
+
+.z-index-1 {
+    z-index: 1;
+}
+
+.overflow-y-visible {
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+.p-relative {
+    position: relative;
+}
+.p-absolute {
+    position: absolute;
+}
+
+.border {
+    border: 1px solid #e0e0e0 !important;
+}
+
+/*--------------------------------------
+    - Background color
+-----------------------------------------*/
+
+.bg-features {
+    background: linear-gradient(
+            rgba(196, 196, 196, 0.203),
+            rgba(196, 196, 196, 0.203)
+        ),
+        url(/assets/images/be-instructor/be-instructor-bg.png) center;
+    background-size: cover;
+}
+
+.bg-tertiary {
+    background: #00c0ea;
+}
+
+.bg-gray-f7 {
+    background: #f7f7f7;
+}
+
+.bg-gray-f2 {
+    background: #f2f2f2;
+}
+
+.bg-gray-f0 {
+    background: #f0f4f5;
+}
+
+.bg-gray-e5 {
+    background: #e5e5e5;
+}
+
+.bg-gray-c4 {
+    background: #c4c4c4;
+}
+
+.bg-gray-82 {
+    background: #828282 !important;
+}
+
+.bg-gray-68 {
+    background: #686f7a !important;
+}
+
+.bg-gray-4f {
+    background: #4f4f4f;
+}
+
+.footer-bg {
+    background: #000a1f;
+}
+
+.blue-bg {
+    background-color: var(--l-blue) !important;
+}
+
+.blue-bg {
+    background: var(--primary);
+}
+
+/*----------------------------------------
+    - color
+-----------------------------------------*/
+
+.text-white h1,
+.text-white h2,
+.text-white h3,
+.text-white h4,
+.text-white h5,
+.text-white h6,
+.text-white p,
+.text-white span,
+.text-white li,
+.text-white a {
+    color: var(--white);
+}
+
+.white-color {
+    color: var(--white);
+}
+
+.star-color {
+    color: #f8b03a;
+}
+
+.theme-color {
+    color: var(--primary) !important;
+}
+.black-color {
+    color: var(--black);
+}
+
+.text-gray {
+    color: #686f7a !important;
+}
+
+.text-rating {
+    color: #ffcc22;
+}
+
+/*************** 
+      spacing
+****************/
+
+.p-20 {
+    padding: 2rem;
+}
+
+.pe-20 {
+    padding-right: 2rem;
+}
+
+.ps-20 {
+    padding-left: 2rem;
+}
+
+.p-40 {
+    padding: 4rem;
+}
+
+.ps-40 {
+    padding-left: 4rem;
+}
+
+.pe-40 {
+    padding-right: 4rem;
+}
+
+.px-40 {
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.p-150 {
+    padding: 15rem;
+}
+
+.pl-245 {
+    padding-left: 245px;
+}
+
+.pr-245 {
+    padding-right: 245px;
+}
+
+.pt-100 {
+    padding-top: 10rem;
+}
+
+.pt-115 {
+    padding-top: 11.5rem;
+}
+
+.pb-120 {
+    padding-bottom: 12rem;
+}
+
+.pt-150 {
+    padding-top: 15rem;
+}
+
+.pb-150 {
+    padding-bottom: 15rem;
+}
+
+.pt-200 {
+    padding-top: 20rem;
+}
+
+.mb-22 {
+    margin-bottom: 22px;
+}
+
+.mb-20 {
+    margin-bottom: 2rem;
+}
+
+.mb-35 {
+    margin-bottom: 3.5rem;
+}
+
+.mb-40 {
+    margin-bottom: 4rem;
+}
+
+.mb-60 {
+    margin-bottom: 6rem;
+}
+
+.ml-270 {
+    margin-left: 270px;
+}
+
+.mt-20 {
+    margin-top: 2rem;
+}
+
+.ms-20 {
+    margin-left: 2rem;
+}
+
+.mt-30 {
+    margin-top: 3rem;
+}
+
+.mt-60 {
+    margin-top: 6rem;
+}
+
+.mt-50 {
+    margin-top: 5rem;
+}
+
+.me-100 {
+    margin-right: 10rem;
+}
+
+.pt-300 {
+    padding-top: 30rem;
+}
+
+.mt-150 {
+    margin-top: 15rem;
+}
+
+.mt-250 {
+    margin-top: 25rem;
+}
+
+.mb--120 {
+    margin-bottom: -120px;
+}
+
+.mb--100 {
+    margin-bottom: -100px;
+}
+
+.mb--220 {
+    margin-bottom: -22rem;
+}
+
+.mb-130 {
+    margin-bottom: -130px;
+}
+
+.mt--210 {
+    margin-top: -210px;
+}
+
+.mt--110 {
+    margin-top: -11rem;
+}
+
+.mt--80 {
+    margin-top: -80px;
+}
+
+.mr-15 {
+    margin-right: 1.5rem;
+}
+
+.section-padding {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+/************** 
+Basic Pagination
+***************/
+
+.page-item {
+    padding: 1.2rem 2rem;
+    box-shadow: 0px 4px 2rem rgba(0, 0, 0, 0.07);
+}
+
+.play-btn {
+    display: inline-block;
+    width: 4.4rem;
+    height: 4.4rem;
+    line-height: 5rem;
+
+    animation: pulse 2s infinite;
+
+    i {
+        font-size: 2rem;
+        margin-left: 2.5px;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+/*********************************
+Theme reuseable components styling
+*********************************/
+
+.theme__search--box {
+    background-color: #f0f4f5;
+    position: relative;
+    border-radius: 5rem;
+    padding: 1rem;
+
+    input {
+        border: none;
+        outline: none;
+        width: calc(100% - 4.5rem);
+        border-right: 1px solid var(--primary);
+        background-color: #f0f4f5;
+        margin-left: 1rem;
+
+        &.input-2 {
+            width: calc(100% - 7.5rem);
+        }
+    }
+
+    &::after {
+        content: '\f002';
+        font-family: 'fontawesome';
+        position: absolute;
+        z-index: 10;
+        top: 1.2rem;
+        right: 1.8rem;
+        color: var(--primary);
+    }
+}
+
+.theme-pagination {
+    display: flex;
+    margin-top: 5rem;
+    justify-content: center;
+
+    button {
+        padding: 1.2rem 2rem;
+        margin-right: 0.5rem;
+        color: #333333;
+        background: var(--white);
+        box-shadow: 0px 4px 2rem rgba(0, 0, 0, 0.07);
+    }
+}
+
+/* 
+    theme btn
+*/
+
+.theme-btn {
+    background-color: var(--bs-btn-bg);
+    border-radius: 4.1rem;
+    overflow: hidden;
+
+    &.btn-secondary span:first-child {
+        background: #74b366;
+    }
+
+    span {
+        display: inline-block;
+
+        &:first-child {
+            i {
+                font-size: 1.9rem;
+                width: 2.9rem;
+                height: 2.9rem;
+                background: var(--white);
+                color: var(--primary);
+                border-radius: 50%;
+                line-height: 2.9rem;
+            }
+
+            padding: 1.5rem 2.2rem 1.6rem 2.1rem;
+            background: #d9164d;
+
+            @include breakpoint(1550px) {
+                padding: 1rem 1.5rem 1.1rem 1.4rem;
+            }
+
+            @include xxl {
+                padding: 9px 13px 10px 12px;
+            }
+
+            @include md {
+                padding: 4px 8px 5px 6px;
+            }
+        }
+
+        &:last-child {
+            padding: 2rem 1.2rem;
+            line-height: 0px;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.4rem;
+
+            @include xxl {
+                padding: 0.6rem 1rem;
+            }
+
+            @include md {
+                padding: 4px 10px 8px 2px;
+            }
+        }
+    }
+}
+
+.btn.normal {
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+}
+
+.theme-2 {
+    padding: 1rem 2rem;
+    color: var(--white);
+
+    &:hover {
+        color: var(--white);
+    }
+}
+
+.round-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 2.7;
+    display: inline-block;
+}
+
+.round-icon-2 {
+    width: 5rem;
+    height: 5rem;
+    display: inline-block;
+    text-align: center;
+    line-height: 5.5rem;
+    border-radius: 50%;
+}
+
+.them-shadow-1 {
+    box-shadow: 0px 4px 2rem rgba(0, 0, 0, 0.05);
+}

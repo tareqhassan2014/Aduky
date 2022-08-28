@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.item-menu {
+    text-align: center;
+    margin: 30px auto;
+}
+
+.item-menu ul li {
+    list-style: none;
+    padding: 12px 15px;
+    display: inline-block;
+    border: 1px solid tomato;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.item-menu ul li:hover,
+.item-menu ul li.active {
+    background-color: tomato;
+    color: white;
+}
+
+.item-details img {
+    width: 100%;
+    margin-bottom: 5px;
+}

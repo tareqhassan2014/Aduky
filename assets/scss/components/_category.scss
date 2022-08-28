@@ -1,0 +1,191 @@
+/*----------------------------------------*/
+/*  09. Category CSS 
+/*----------------------------------------*/
+
+.category {
+    &__images {
+        position: relative;
+
+        @include lg {
+            display: none;
+        }
+
+        img {
+            position: absolute;
+
+            &:nth-child(1) {
+                width: 60%;
+            }
+
+            &:nth-child(2) {
+                width: 55%;
+                right: 7%;
+                top: 19rem;
+            }
+
+            &:nth-child(3) {
+                width: 25%;
+                top: 0%;
+                right: 9%;
+            }
+        }
+    }
+
+    &__text {
+        .button--container {
+            @include lg {
+                text-align: center;
+            }
+        }
+        h2 {
+            position: relative;
+
+            &::after {
+                position: absolute;
+                top: -2.9rem;
+                left: 0;
+                content: '';
+                height: 3px;
+                width: 5.6rem;
+                background-color: var(--primary);
+                border-radius: 4rem;
+            }
+        }
+    }
+
+    &__item {
+        &--icon {
+            width: 3rem;
+            height: 3rem;
+            text-align: center;
+            line-height: 2;
+            border-radius: 4rem;
+        }
+    }
+
+    &-2 {
+        &__images {
+            position: relative;
+
+            & > img {
+                position: absolute;
+                bottom: -7rem;
+                right: 3rem;
+                width: 30rem;
+
+                @include xl {
+                    bottom: -4rem;
+                    right: 6rem;
+                    width: 20rem;
+                }
+
+                @include lg {
+                    display: none;
+                }
+            }
+
+            &--text {
+                width: 19rem;
+                height: 18rem;
+                background: #f0f4f5;
+                position: absolute;
+                right: 5rem;
+                top: 2.7rem;
+                border-radius: 1rem;
+                border: 1rem solid #ffffff;
+                padding: 2rem;
+
+                @include lg {
+                    display: none;
+                }
+            }
+
+            &--thumb {
+                width: 49rem;
+                max-width: 100%;
+                height: 56rem;
+                max-height: 100%;
+                background: #bb90c6;
+                border-radius: 244px 244px 10px 10px;
+
+                @include xl {
+                    width: 36rem;
+                    height: 44rem;
+                }
+
+                @include lg {
+                    margin-inline: auto;
+                    margin-bottom: 5rem;
+                }
+
+                img {
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    &-3 {
+        &__images {
+            img {
+                width: 80%;
+            }
+            text-align: center;
+
+            @include lg {
+                margin-bottom: 4rem;
+            }
+        }
+
+        &__item {
+            display: flex;
+            align-items: center;
+
+            margin-bottom: 2rem;
+        }
+    }
+
+    &-4 {
+        &__img {
+            @include md {
+                text-align: center;
+            }
+
+            img {
+                width: 85%;
+                border-radius: 2rem;
+
+                @include md {
+                    margin-bottom: 5rem;
+                }
+
+                &:last-child {
+                    position: absolute;
+                    width: 55%;
+                    bottom: -24%;
+                    right: 3%;
+
+                    @include md {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.icon-after {
+    position: relative;
+
+    &::after {
+        content: '';
+        width: 3rem;
+        height: 3rem;
+        background: #e0e0e0;
+        transform: rotate(-29.96deg);
+        z-index: -1;
+        position: absolute;
+        top: -1.1rem;
+        left: -2px;
+    }
+}

@@ -1,0 +1,249 @@
+/*----------------------------------------*/
+/*  04. Hero CSS
+/*----------------------------------------*/
+
+.hero {
+    &__background {
+        background: linear-gradient(
+                rgba(51, 51, 51, 0.653),
+                rgba(51, 51, 51, 0.653)
+            ),
+            url(/assets/images/hero/hero.png) center no-repeat;
+        background-size: cover;
+        clip-path: circle(200% at 50% -241%);
+
+        @include xxl {
+            clip-path: none;
+        }
+    }
+
+    &__mouse {
+        bottom: 2%;
+        left: 50%;
+        color: var(--white);
+        font-size: 3rem;
+    }
+
+    &__container {
+        min-height: 70rem;
+
+        @include sm {
+            min-height: 45rem;
+        }
+    }
+
+    &__offer {
+        margin-top: 2rem;
+        p {
+            display: inline-block;
+            margin-right: 2rem;
+
+            &:nth-child(2) i {
+                background: var(--primary);
+            }
+            &:nth-child(1) i {
+                background-color: var(--secondary);
+            }
+            &:nth-child(3) i {
+                background-color: #c4c4c4;
+                opacity: 0.7;
+            }
+
+            i {
+                margin-right: 1rem;
+                padding: 0.7rem;
+                border-radius: 4rem;
+                border: 1px solid var(--white);
+                height: 3.2rem;
+                width: 3.2rem;
+                line-height: 1.6rem;
+            }
+        }
+    }
+
+    &__search {
+        background: var(--white);
+        border-radius: 4rem;
+        display: flex;
+        justify-content: space-between;
+        padding: 1px;
+
+        margin: 3rem 0;
+
+        & input {
+            margin-left: 3rem;
+            border: 0px;
+            outline: 0px;
+            flex-wrap: auto;
+            flex-grow: 2;
+        }
+    }
+
+    &__content {
+        width: 50%;
+
+        @include xxl {
+            width: 50%;
+        }
+        @include md {
+            width: 80%;
+        }
+
+        @include sm {
+            width: 96%;
+        }
+
+        h1 {
+            font-size: 4rem;
+            line-height: 5rem;
+
+            @include xxl {
+                font-size: 3.5rem;
+                line-height: 4rem;
+            }
+
+            @include xl {
+                font-size: 3rem;
+                line-height: 4rem;
+            }
+
+            @include xl {
+                font-size: 2.5rem;
+                line-height: 4rem;
+            }
+
+            @include sm {
+                font-size: 2rem;
+                line-height: 3rem;
+            }
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        h4 {
+            font-size: 2.5rem;
+
+            @include sm {
+                font-size: 1.6rem;
+            }
+        }
+    }
+
+    &__shape {
+        img {
+            position: absolute;
+            width: 20%;
+
+            &:nth-child(1) {
+                bottom: 0%;
+                left: 0%;
+                width: 15%;
+            }
+
+            &:nth-child(2) {
+                top: 14%;
+                left: 12%;
+                width: 8%;
+            }
+
+            &:nth-child(3) {
+                bottom: 7%;
+                left: 20%;
+                width: 3%;
+            }
+
+            &:nth-child(4) {
+                bottom: 0%;
+                right: 0%;
+                width: 25%;
+
+                @include md {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &-2 {
+        margin: 5rem 5rem 0;
+
+        @include sm {
+            margin: 0;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &-5 {
+        position: relative;
+
+        &__container {
+            height: 100%;
+            background-color: #f0f4f5;
+            background: url(/assets/images/hero/hero-bg-03.png);
+            background-size: cover;
+            background-position: center;
+        }
+
+        &__content {
+            padding-top: 25rem;
+            padding-bottom: 10rem;
+
+            width: 50%;
+
+            @include xxl {
+                width: 50%;
+            }
+            @include md {
+                width: 80%;
+            }
+
+            @include sm {
+                width: 96%;
+            }
+
+            h1 {
+                font-size: 4rem;
+                line-height: 5rem;
+
+                @include xxl {
+                    font-size: 3.5rem;
+                    line-height: 4rem;
+                }
+
+                @include xl {
+                    font-size: 3rem;
+                    line-height: 4rem;
+                }
+
+                @include xl {
+                    font-size: 2.5rem;
+                    line-height: 4rem;
+                }
+
+                @include sm {
+                    font-size: 2rem;
+                    line-height: 3rem;
+                }
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+
+            h4 {
+                font-size: 2.5rem;
+
+                @include sm {
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+}

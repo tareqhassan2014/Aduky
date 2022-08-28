@@ -1,0 +1,23 @@
+/*----------------------------------------*/
+/*  24. Slogan CSS
+/*----------------------------------------*/
+
+.slogan {
+    &__container {
+        margin-inline: auto;
+
+        width: 60%;
+
+        @include xl {
+            width: 75%;
+        }
+
+        @include lg {
+            width: 90%;
+        }
+
+        @include md {
+            width: 95%;
+        }
+    }
+}

@@ -1,0 +1,138 @@
+/*----------------------------------------*/
+/*  16. Teacher CSS
+/*----------------------------------------*/
+
+.teacher {
+    &__thumb {
+        width: 43rem;
+        height: 43rem;
+        border: 2rem solid var(--white);
+        box-shadow: 0px 4px 2rem rgba(0, 0, 0, 0.05);
+
+        @include xl {
+            width: 34rem;
+            height: 34rem;
+        }
+
+        @include lg {
+            margin-bottom: 4rem;
+            margin-inline: auto;
+
+            width: 50rem;
+            height: 50rem;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+
+            &:hover {
+                transform: scale(0.9);
+            }
+        }
+    }
+
+    &__detail {
+        @include M-xl {
+            padding-left: 5rem;
+        }
+
+        &--head {
+            border-bottom: 1px dashed #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            flex-wrap: wrap;
+            gap: 2rem;
+
+            @include sm {
+                justify-content: center;
+            }
+        }
+
+        &--meta {
+            border-bottom: 1px dashed #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+    }
+
+    &-button {
+        ul li {
+            display: inline-block;
+            width: 3.4rem;
+            height: 3.4rem;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+            border-radius: 3px;
+            margin-left: 1rem;
+
+            i {
+                line-height: 3rem;
+            }
+
+            &:hover,
+            &:first-child {
+                background: var(--primary);
+                color: var(--white);
+            }
+        }
+
+        button {
+            margin-left: 4rem;
+
+            span {
+                &:first-child {
+                    padding: 7px 5px !important;
+                }
+
+                &:last-child {
+                    padding: 7px 5px !important;
+                }
+            }
+        }
+    }
+
+    &__course {
+        &--head {
+            display: flex;
+            justify-content: space-between;
+
+            @include sm {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 2rem;
+            }
+        }
+    }
+
+    &-2 {
+        &__card {
+            margin-bottom: 3rem;
+        }
+
+        &__detail {
+            background: linear-gradient(
+                360deg,
+                #000000 0%,
+                rgba(196, 196, 196, 0) 101.91%
+            );
+
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+
+            padding: 4rem;
+
+            @include lg {
+                padding: 2rem;
+            }
+        }
+    }
+}

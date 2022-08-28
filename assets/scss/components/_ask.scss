@@ -1,0 +1,82 @@
+/*----------------------------------------*/
+/*  14. Ask CSS
+/*----------------------------------------*/
+
+.ask {
+    background-color: #f0f4f5;
+    @include M-lg {
+        height: 70rem;
+        margin-bottom: 25rem;
+    }
+
+    @include lg {
+        padding: 5rem 0;
+        margin-bottom: 15rem;
+    }
+
+    &__images {
+        @include md {
+            display: none;
+        }
+
+        @include lg {
+            margin-top: 4rem;
+        }
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        height: 100%;
+
+        img {
+            width: 40rem;
+        }
+
+        .ask-img-2 {
+            position: absolute;
+            width: 20%;
+            top: 11%;
+            left: 7%;
+
+            @include lg {
+                width: 15%;
+                top: 1%;
+                left: 19%;
+            }
+        }
+    }
+
+    &__form {
+        width: 100%;
+        background: var(--white);
+        padding: 4rem;
+        border: 1px solid #bdbdbd;
+        border-radius: 1rem;
+
+        &--container {
+            @include M-lg {
+                transform: translateY(10%);
+            }
+        }
+
+        .form__input {
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            min-height: 6rem;
+            background-color: #f0f4f5;
+            padding-inline: 2rem;
+
+            input,
+            select,
+            textarea {
+                height: 100%;
+                width: 100%;
+                border: none;
+                margin-left: 1rem;
+                background-color: transparent;
+            }
+        }
+    }
+}

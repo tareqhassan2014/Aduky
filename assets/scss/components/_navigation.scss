@@ -1,0 +1,415 @@
+/*----------------------------------------*/
+/*  02. Navigation Bar CSS
+/*----------------------------------------*/
+
+.navbar {
+    &:not(.navbar__5, .navbar__4) {
+        width: 90% !important;
+        margin-inline: auto;
+
+        @include xxl {
+            width: 95% !important;
+        }
+
+        @include xl {
+            width: 98% !important;
+        }
+    }
+
+    &__transparent {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 11;
+    }
+
+    &-brand {
+        img {
+            @include breakpoint(1500px) {
+                height: 4.5rem;
+            }
+
+            @include xxl {
+                height: 4rem;
+            }
+        }
+    }
+
+    &.navbar__transparent {
+        .nav-item .nav-link {
+            color: var(--white);
+        }
+
+        .navbar__icon {
+            border: 1px solid var(--white);
+        }
+    }
+
+    &-nav {
+        @include lg {
+            .nav-item {
+                border-bottom: 1px solid white;
+
+                background-color: var(--primary);
+
+                :hover {
+                    background-color: #f0f4f5;
+                    &.nav-link {
+                        color: var(--primary);
+                    }
+                }
+
+                .nav-link {
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    color: white;
+                    padding: 1rem 0.7rem;
+
+                    &.dropdown-toggle {
+                        border-right: 1px solid white;
+                        width: calc(100% - 40px);
+                        position: relative;
+
+                        &::after {
+                            content: '\2b';
+                            position: absolute;
+                            right: -25px;
+                            vertical-align: 0;
+                            border-top: 0;
+                        }
+                    }
+                }
+
+                &.dropdown {
+                    .dropdown-menu {
+                        padding-top: 1.7rem;
+                        padding-bottom: 1.5rem;
+
+                        background: #f0f4f5;
+                        z-index: 1;
+                        border: none;
+                        transition: all ease 0.3s;
+                        width: 90%;
+
+                        & li {
+                            & > a {
+                                display: block;
+                                padding: 1rem 7rem 1rem 3rem;
+                                text-transform: capitalize;
+                                font-weight: 500;
+                                font-size: 1.5rem;
+                                border-bottom: 1px solid white;
+                            }
+                            &:hover {
+                                & > a {
+                                    color: var(--primary);
+                                }
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        .dropdown-menu {
+                            display: block;
+                            visibility: visible;
+                            opacity: 1;
+                            top: 100%;
+                        }
+                    }
+                }
+
+                &:hover {
+                    .dropdown-menu {
+                        visibility: visible;
+                        opacity: 1;
+                        // top: 100%;
+                    }
+                }
+            }
+        }
+
+        @include M-lg {
+            .nav-item {
+                position: relative;
+                padding: 1rem 0.7rem;
+
+                @include xl {
+                    padding: 2rem 1rem;
+                }
+
+                &.dropdown {
+                    .dropdown-menu {
+                        display: block;
+                        position: absolute;
+                        top: calc(100% + 30px);
+                        left: 0;
+
+                        padding-top: 1.7rem;
+                        padding-bottom: 1.5rem;
+
+                        background: #f0f4f5;
+                        @include box-shadow(
+                            0px 10px 20px 0px rgba(8, 0, 42, 0.08)
+                        );
+                        @include border-radius(4px);
+                        z-index: 1;
+                        border: none;
+                        transition: all ease 0.3s;
+
+                        visibility: hidden;
+                        opacity: 0;
+
+                        & li {
+                            & > a {
+                                display: block;
+                                padding: 1rem 7rem 1rem 3rem;
+                                text-transform: capitalize;
+                                font-weight: 500;
+                                font-size: 1.5rem;
+                            }
+                            &:hover {
+                                & > a {
+                                    color: var(--primary);
+                                }
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        .dropdown-menu {
+                            visibility: visible;
+                            opacity: 1;
+                            top: 100%;
+                        }
+                    }
+                }
+
+                &:hover {
+                    color: var(--secondary);
+
+                    .nav-link {
+                        color: var(--secondary);
+                    }
+
+                    .nav-link::before {
+                        width: 90%;
+                    }
+                }
+
+                .nav-link {
+                    font-weight: 700;
+                    color: var(--primary);
+                    padding: 1.7rem 0;
+                    transition: all ease 0.3s;
+
+                    margin-right: 1rem;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        bottom: 1.8rem;
+                        left: 2%;
+                        width: 0%;
+                        height: 2px;
+                        background-color: var(--secondary);
+                    }
+
+                    &.active {
+                        color: var(--secondary);
+                    }
+
+                    &.dropdown-toggle {
+                        &::after {
+                            content: '+';
+                            vertical-align: 0;
+                            border-top: 0;
+                        }
+
+                        &::before {
+                            left: -5%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__icon {
+        &:not(:last-child) {
+            margin-right: 1rem;
+        }
+
+        display: inline-block;
+        border: 1px solid #4f4f4f;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        text-align: center;
+        width: 4.4rem;
+        height: 4.4rem;
+        line-height: 4.6rem;
+
+        .badge {
+            top: -2px;
+            right: -10px;
+            z-index: 1;
+            border-radius: 32px;
+        }
+
+        @include xxl {
+            width: 4rem;
+            height: 4rem;
+            line-height: 4rem;
+
+            .badge {
+                top: -7px;
+                right: -10px;
+            }
+        }
+    }
+
+    &__top {
+        background-color: var(--secondary);
+        color: var(--white);
+        display: flex;
+        justify-content: space-between;
+
+        padding: 0.7rem 2rem 0.7rem 6rem;
+        margin-bottom: 5px;
+        border-radius: 2.25rem 2.25rem 0 0;
+
+        @include lg {
+            flex-direction: row-reverse;
+        }
+
+        &--text {
+            display: flex;
+            align-items: center;
+
+            p {
+                font-size: 1.2rem;
+
+                &:not(:first-child) {
+                    margin-left: 2rem;
+                }
+
+                &:not(:last-child) {
+                    padding-right: 2rem;
+                    border-right: 1px solid white;
+                }
+            }
+
+            @include lg {
+                display: none;
+            }
+        }
+    }
+
+    &__4 {
+        position: absolute;
+        top: 0.5rem;
+        left: 0;
+        right: 0;
+        z-index: 110;
+
+        padding-top: 0;
+        background: var(--white);
+
+        box-shadow: 0px 4px 2rem rgba(0, 0, 0, 0.05);
+        border-radius: 2.2rem;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__5 {
+        position: absolute;
+        top: 3.5rem;
+        left: 0;
+        right: 0;
+        z-index: 110;
+
+        padding-inline: 3rem;
+        background: var(--white);
+
+        box-shadow: 0px 4px 2rem rgba(0, 0, 0, 0.05);
+        border-radius: 0px 0px 2.2rem 2.2rem;
+
+        &::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+
+            top: 2rem;
+            left: 2rem;
+            z-index: -11;
+
+            border: 1px solid var(--secondary);
+            border-radius: 0px 0px 2.2rem 2.2rem;
+        }
+    }
+}
+
+.header {
+    &__category {
+        padding-left: 3rem;
+        margin-left: 3rem;
+
+        @include breakpoint(1500px) {
+            padding-left: 2rem;
+            margin-left: 2rem;
+        }
+
+        @include xxl {
+            padding-left: 1rem;
+            margin-left: 1rem;
+        }
+
+        .book-icon {
+            font-size: 2.5rem;
+        }
+
+        & ul {
+            & li {
+                position: relative;
+                & .cat-submenu {
+                    position: absolute;
+                    top: calc(100% + 30px);
+                    left: 0;
+
+                    padding-top: 1.7rem;
+                    padding-bottom: 1.5rem;
+
+                    background: #f0f4f5;
+                    @include box-shadow(0px 10px 20px 0px rgba(8, 0, 42, 0.08));
+                    @include border-radius(4px);
+                    z-index: 1;
+                    visibility: hidden;
+                    opacity: 0;
+                    @include transition(0.3s);
+                    & li {
+                        & > a {
+                            display: block;
+                            padding: 3px 30px;
+                            text-transform: capitalize;
+                            font-weight: 500;
+                        }
+                        &:hover {
+                            & > a {
+                                color: var(--primary);
+                            }
+                        }
+                    }
+                }
+                &:hover {
+                    & .cat-submenu {
+                        visibility: visible;
+                        opacity: 1;
+                        top: calc(100% + 10px);
+                    }
+                }
+            }
+        }
+    }
+}

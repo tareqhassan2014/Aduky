@@ -1,0 +1,328 @@
+/*----------------------------------------*/
+/*  05. Subject CSS
+/*----------------------------------------*/
+.subject {
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+
+        & > * {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        height: 100%;
+        border: 1px solid #d1d1d1;
+        transition: all ease 0.3s;
+        border-radius: 2rem 0 0 2rem;
+        padding: 4rem;
+
+        @include md {
+            border-radius: 2rem 2rem 0 0;
+        }
+
+        &:hover {
+            border: 1px solid var(--secondary);
+        }
+
+        @include xl {
+            padding: 2rem;
+        }
+
+        @include sm {
+            padding: 2rem;
+        }
+
+        img {
+            display: block;
+            margin-inline: auto;
+            width: 100%;
+
+            @include xl {
+                width: 80%;
+            }
+        }
+
+        &--text {
+            display: flex;
+            align-items: center;
+
+            margin-top: 3rem;
+
+            i {
+                font-size: 4rem;
+                color: var(--primary);
+                margin-right: 1.5rem;
+            }
+        }
+    }
+
+    &__item {
+        height: 100%;
+        padding: 4rem 0 0 4rem;
+        border: 1px solid #d1d1d1;
+
+        &:hover {
+            border: 1px solid var(--secondary);
+        }
+
+        &-2 {
+            border-top-right-radius: 2rem;
+
+            @include md {
+                border-radius: 0;
+            }
+        }
+
+        &-4 {
+            border-bottom-right-radius: 2rem;
+
+            @include md {
+                border-bottom-left-radius: 2rem;
+            }
+        }
+
+        @include xl {
+            padding: 4rem 0 0 2rem;
+        }
+
+        @include md {
+            padding: 7rem 0 0 7rem;
+        }
+
+        @include sm {
+            padding: 4rem 0 0 4rem;
+        }
+
+        &--top {
+            display: flex;
+            align-items: center;
+
+            .title {
+                position: relative;
+
+                span {
+                    position: absolute;
+                    top: -2.5rem;
+                    left: 0;
+                }
+            }
+        }
+
+        img {
+            max-width: 27rem;
+            display: block;
+            margin-left: auto;
+
+            @include md {
+                max-width: 45rem;
+            }
+
+            @include sm {
+                max-width: 40rem;
+            }
+        }
+    }
+
+    &__icon {
+        position: relative;
+        width: 8rem;
+        height: 8rem;
+
+        & * {
+            display: inline-block;
+            border-radius: 50%;
+            width: 5rem;
+            height: 5rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        & span:nth-child(1) {
+            border: 1px solid var(--primary);
+        }
+        & span:nth-child(2) {
+            top: 2px;
+            left: 2px;
+            background: #e4e3e6;
+        }
+        & span:nth-child(3) {
+            top: 10px;
+            left: 10px;
+            color: var(--primary);
+            background: var(--white);
+            box-shadow: -1px 8px 8px -4px rgba(0, 0, 0, 0.11);
+
+            i {
+                position: relative;
+                top: 1.5rem;
+                left: 1.8rem;
+            }
+        }
+    }
+
+    &-2 {
+        &__container {
+            background: var(--white);
+            border: 1px solid #d1d1d1;
+            border-radius: 2rem;
+            overflow: hidden;
+        }
+
+        &__carousel {
+            .item {
+                @include lg {
+                    justify-content: center;
+                }
+            }
+
+            &--wrapper {
+                padding: 6rem;
+            }
+
+            &--img {
+                width: 13rem;
+                height: 13rem;
+                background: var(--white);
+                border: 1px solid #e9e9e9;
+                border-radius: 1rem;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        &__thumb {
+            padding: 5rem 3rem;
+
+            & > img {
+                width: 50%;
+                display: inline-block;
+            }
+
+            & {
+                text-align: center;
+            }
+        }
+
+        .owl {
+            &-next,
+            &-prev {
+                bottom: -46%;
+                width: 3rem;
+                height: 3rem;
+                position: absolute;
+                border-radius: 50%;
+
+                transform: translateY(-50%);
+
+                span {
+                    display: none;
+                }
+
+                &::after {
+                    font-family: 'fontawesome';
+                    color: var(--white);
+                    font-size: 1.5rem;
+                    line-height: 3rem;
+                }
+            }
+
+            &-prev {
+                left: 38%;
+                background-color: var(--secondary) !important;
+
+                @include sm {
+                    left: 35%;
+                }
+
+                &::after {
+                    content: '\f177';
+                }
+            }
+
+            &-next {
+                right: 43%;
+                background-color: var(--primary) !important;
+
+                @include sm {
+                    right: 36%;
+                }
+
+                &::after {
+                    content: '\f178';
+                }
+            }
+
+            &-dot {
+                position: absolute;
+                bottom: -30%;
+                left: 45%;
+
+                width: 1.5rem;
+                height: 1.5rem;
+                background: #828282 !important;
+                border-radius: 50%;
+
+                &:last-child {
+                    margin-left: 2rem;
+                }
+
+                &.active {
+                    width: 1.1rem;
+                    height: 1.1rem;
+                    margin-bottom: 2px;
+                    background: var(--primary) !important;
+                }
+            }
+        }
+    }
+
+    &-3 {
+        &__carousel--wrapper {
+            border-radius: 3rem;
+            padding: 6rem;
+        }
+
+        .owl {
+            &-next,
+            &-prev {
+                top: 50%;
+                width: 3rem;
+                height: 3rem;
+                position: absolute;
+                border-radius: 50%;
+
+                transform: translateY(-50%);
+
+                span {
+                    color: var(--white);
+                    font-size: 4rem;
+                    line-height: 2.7rem;
+                }
+            }
+
+            &-prev {
+                left: -6.25%;
+                background-color: var(--secondary) !important;
+            }
+
+            &-next {
+                right: -6.25%;
+                background-color: var(--primary) !important;
+            }
+
+            &-dots {
+                display: none;
+            }
+        }
+    }
+}

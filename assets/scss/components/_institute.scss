@@ -1,0 +1,85 @@
+/*----------------------------------------*/
+/*  11. Instructor CSS
+/*----------------------------------------*/
+
+.institute {
+    &__wrapper {
+        width: 90%;
+        padding: 15rem 10rem;
+
+        @include sm {
+            width: 100%;
+            padding: 2rem 2rem;
+            padding-top: 10rem;
+        }
+
+        @include xl {
+            padding: 3rem 4rem;
+            padding-top: 10rem;
+        }
+    }
+
+    &__img {
+        height: 150px;
+
+        text-align: center;
+        img {
+            display: inline-block;
+            height: 100%;
+        }
+    }
+
+    &__carousel {
+        @include lg {
+            margin-top: 4rem;
+        }
+
+        .owl {
+            &-next {
+                top: 45%;
+                right: -1.3rem;
+                width: 3rem;
+                height: 3rem;
+                position: absolute;
+                border-radius: 50%;
+                transform: translateY(-50%);
+                background-color: var(--secondary) !important;
+
+                @include sm {
+                    width: 3rem;
+                    height: 3rem;
+                }
+
+                span {
+                    display: none;
+                }
+
+                &::after {
+                    content: '\f105';
+                    font-family: 'fontawesome';
+                    color: var(--white);
+                    font-size: 2.5rem;
+                    line-height: 3.5rem;
+
+                    @include sm {
+                        font-size: 1.5rem;
+                        line-height: 2.5rem;
+                    }
+                }
+            }
+        }
+    }
+
+    &__certificate {
+        @include sm {
+            text-align: center;
+            margin-block: 5rem;
+        }
+
+        &--wrapper {
+            @include M-sm {
+                margin-top: 3rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,147 @@
+/*----------------------------------------*/
+/*  07. BE-INSTRACTOR CSS START
+/*----------------------------------------*/
+
+.instructor {
+    padding-bottom: 20rem;
+    padding-top: 10rem;
+
+    background: linear-gradient(
+            rgba(196, 196, 196, 0.203),
+            rgba(196, 196, 196, 0.203)
+        ),
+        url(/assets/images/be-instructor/be-instructor-bg.png) center;
+    background-size: cover;
+
+    &__container {
+        @include M-md {
+            width: 50%;
+        }
+
+        margin-inline: auto;
+        text-align: center;
+
+        h5 {
+            margin-bottom: 6rem;
+        }
+    }
+
+    &-2 {
+        padding-top: 20rem;
+        padding-bottom: 10rem;
+
+        background: linear-gradient(
+                rgba(196, 196, 196, 0.203),
+                rgba(196, 196, 196, 0.203)
+            ),
+            url(/assets/images/be-instructor/be-instructor-bg.png) center;
+        background-size: cover;
+
+        &-img img {
+            width: 48rem;
+            height: 67rem;
+        }
+
+        &-container {
+            height: 708px;
+
+            background: #fd1a5a;
+            border-radius: 0px 354px 0px 0px;
+        }
+
+        &--vector {
+            bottom: 5%;
+            right: 5%;
+        }
+    }
+
+    &-3 {
+        overflow: hidden;
+
+        .vector {
+            position: absolute;
+            width: 15%;
+
+            bottom: 10%;
+            right: 10%;
+
+            @include sm {
+                bottom: 5%;
+                right: 5%;
+                width: 20%;
+            }
+
+            @include lg {
+                bottom: 5%;
+                right: 15%;
+                width: 28%;
+            }
+        }
+
+        &__container {
+            height: 70rem;
+            position: relative;
+            background-color: var(--primary);
+            border-radius: 0px 35rem 0px 0px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        &__hero {
+            align-self: flex-end;
+            width: 30%;
+            max-width: 100%;
+
+            @include lg {
+                display: none;
+            }
+        }
+
+        &-content {
+            width: 48%;
+
+            @include sm {
+                width: 80%;
+            }
+
+            @include lg {
+                width: 80%;
+            }
+        }
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+
+        @include sm {
+            flex-direction: column;
+        }
+
+        &--play {
+            span:first-child {
+                display: inline-block;
+                border: 1px solid var(--white);
+                border-radius: 50%;
+                font-size: 1.5rem;
+                width: 4.4rem;
+                height: 4.4rem;
+                line-height: 4.4rem;
+                text-align: center;
+                background-color: var(--primary);
+            }
+
+            span:last-child {
+                display: inline-block;
+                font-weight: 700;
+                font-size: 1.4rem;
+                line-height: 2rem;
+                margin-left: 1.6rem;
+            }
+        }
+    }
+}

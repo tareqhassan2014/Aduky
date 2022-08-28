@@ -1,0 +1,113 @@
+/*----------------------------------------*/
+/*  23. Shop CSS
+/*----------------------------------------*/
+
+.shop {
+    &__tab {
+        &-inner {
+            box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.06);
+        }
+
+        &-btn {
+            .nav-tabs .nav-link {
+                border: none;
+                color: #686f7a;
+                padding-right: 2rem;
+                border-right: 1px solid #e0e0e0;
+
+                &:last-child {
+                    padding-left: 2rem;
+                }
+
+                &.active {
+                    color: var(--primary);
+                }
+            }
+        }
+    }
+
+    &__sort {
+        display: flex;
+        align-items: center;
+
+        p {
+            margin-right: 3rem;
+            @include sm {
+                margin-right: 1rem;
+            }
+        }
+
+        &-inner {
+            position: relative;
+            &::before {
+                content: '\f107';
+                right: 2.6rem;
+                top: 1.4rem;
+                position: absolute;
+                color: #53545b;
+                font-family: fontawesome;
+                font-weight: 500;
+
+                @include breakpoint(350px) {
+                    right: 0.6rem;
+                }
+            }
+            & select {
+                appearance: none;
+                -moz-appearance: none;
+                outline: none;
+
+                background: #f0f4f5;
+                border: 1px solid #e0e0e0;
+                border-radius: 2.5rem;
+
+                width: 34rem;
+                height: 5rem;
+                padding: 1.2rem 3rem;
+
+                @include sm {
+                    width: 25rem;
+                    padding: 1.2rem 1rem;
+                }
+
+                @include breakpoint(350px) {
+                    width: 23rem;
+                    padding: 1.2rem 1rem;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    &__thumb {
+        .shop__btn {
+            opacity: 0;
+            transition: all ease 0.3s;
+            height: 0;
+
+            .link-btn:hover {
+                color: var(--white);
+                background: var(--primary) !important;
+            }
+        }
+
+        &:hover {
+            background: #ffffff;
+            opacity: 0.7;
+            .shop__btn {
+                opacity: 1;
+                height: 100%;
+            }
+        }
+    }
+
+    &__item {
+        @include sm {
+            width: 320px;
+            margin-inline: auto;
+        }
+    }
+}

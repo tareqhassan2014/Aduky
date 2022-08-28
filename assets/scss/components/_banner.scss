@@ -1,0 +1,153 @@
+/*----------------------------------------*/
+/*  03. Banner CSS
+/*----------------------------------------*/
+
+.banner {
+    height: 80rem;
+    position: relative;
+    background: linear-gradient(rgba(79, 79, 79, 0.8), rgba(79, 79, 79, 0.8)),
+        url('/assets/images/banner/banner-03.png');
+    background-position: center;
+    background-size: cover;
+
+    &__content {
+        h1 {
+            width: 40%;
+
+            @include xxl {
+                width: 50%;
+            }
+
+            @include lg {
+                width: 68%;
+            }
+
+            @include sm {
+                width: 100%;
+            }
+        }
+
+        h5 {
+            margin-top: 3rem;
+
+            @include sm {
+                margin-top: 4rem;
+            }
+        }
+    }
+
+    &__avatars {
+        &--container {
+            margin-top: 4rem;
+
+            p {
+                @include md {
+                    transform: translate(3%, 30%);
+                }
+            }
+        }
+    }
+
+    &__shapes {
+        img {
+            &:nth-child(1) {
+                bottom: 0;
+                right: 0;
+            }
+
+            &:nth-child(2) {
+                width: 10%;
+                top: 6rem;
+                right: 07rem;
+            }
+
+            &:nth-child(3) {
+                top: 45%;
+                right: 40%;
+
+                @include md {
+                    width: 3.5rem;
+                    top: 59%;
+                    right: 17%;
+                }
+
+                @include sm {
+                    width: 3.5rem;
+                    top: 56%;
+                    right: 21%;
+                }
+            }
+
+            &:nth-child(4) {
+                top: 30%;
+                left: 43%;
+                width: 3%;
+            }
+
+            &:nth-child(5) {
+                top: 17%;
+                left: 61%;
+                width: 30%;
+                border-radius: 13rem 0px 0px 0px;
+
+                @include md {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__congratulations {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        background: var(--white);
+        opacity: 0.75;
+        border-radius: 4.5rem;
+        padding: 1rem;
+
+        bottom: 20%;
+        right: 30%;
+
+        @include md {
+            bottom: 16%;
+            right: 5%;
+        }
+    }
+
+    &__avatars {
+        img {
+            top: -1rem;
+
+            &:nth-child(2) {
+                left: 2rem;
+            }
+            &:nth-child(3) {
+                left: 4rem;
+            }
+            &:nth-child(4) {
+                left: 6rem;
+            }
+        }
+
+        &--container {
+            p {
+                margin-left: 12rem;
+            }
+        }
+    }
+
+    &-2 {
+        height: 35rem;
+        background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+            url('/assets/images/banner/banner-02.png');
+    }
+}
+
+.breadcrumb-item.active {
+    color: var(--secondary);
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: var(--white);
+}

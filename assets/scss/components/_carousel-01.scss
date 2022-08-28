@@ -1,0 +1,93 @@
+/*----------------------------------------*/
+/*  10. Carousel CSS
+/*----------------------------------------*/
+
+.carousel-1 {
+    .item {
+        height: 60rem;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__text {
+        top: 50%;
+        left: 40%;
+        transform: translate(-50%, -50%);
+    }
+
+    .owl {
+        &-next,
+        &-prev {
+            bottom: 5%;
+            width: 3rem;
+            height: 3rem;
+            position: absolute;
+            border-radius: 50%;
+
+            transform: translateY(-50%);
+
+            span {
+                display: none;
+            }
+
+            &::after {
+                font-family: 'fontawesome';
+                color: var(--white);
+                font-size: 1.5rem;
+                line-height: 3rem;
+            }
+        }
+
+        &-prev {
+            left: 40%;
+            background-color: var(--secondary) !important;
+
+            @include sm {
+                left: 35%;
+            }
+
+            &::after {
+                content: '\f177';
+            }
+        }
+
+        &-next {
+            right: 47%;
+            background-color: var(--primary) !important;
+
+            @include sm {
+                right: 36%;
+            }
+
+            &::after {
+                content: '\f178';
+            }
+        }
+
+        &-dot {
+            position: absolute;
+            bottom: 9%;
+            left: 45%;
+
+            width: 1.5rem;
+            height: 1.5rem;
+            background: #828282 !important;
+            border-radius: 50%;
+
+            &:last-child {
+                margin-left: 2rem;
+            }
+
+            &.active {
+                width: 1.1rem;
+                height: 1.1rem;
+                margin-bottom: 2px;
+                background: var(--primary) !important;
+            }
+        }
+    }
+}

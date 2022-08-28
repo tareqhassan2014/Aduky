@@ -1,0 +1,127 @@
+/*----------------------------------------*/
+/*  28. FOOTER CSS 
+/*----------------------------------------*/
+.footer {
+    h4 {
+        position: relative;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid #4d4d4d;
+
+        &::before {
+            position: absolute;
+            content: '';
+            bottom: -1px;
+            width: 4.3rem;
+            height: 2px;
+
+            background: linear-gradient(
+                270deg,
+                #0d7dfc -22.92%,
+                #ff9360 56.63%
+            );
+        }
+    }
+
+    &__brand {
+        &--logo {
+            max-width: 24rem;
+            max-height: 7.5rem;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    &__gallery {
+        img {
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    &__links {
+        .footer__link {
+            display: inline-block;
+            margin-bottom: 1rem;
+
+            &::before {
+                content: '\f105';
+                font-family: 'fontawesome';
+                margin-right: 0.3rem;
+            }
+        }
+    }
+
+    &__subscribe {
+        &.subscribe-2 {
+            background: #2c2c2c;
+            border-radius: 15px;
+            padding: 4rem;
+        }
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include md {
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        &--input {
+            display: flex;
+            background: #272727;
+            border: 1px solid #999999;
+            border-radius: 64px;
+
+            width: 50rem;
+
+            @include lg {
+                width: 40rem;
+            }
+
+            @include md {
+                max-width: 36rem;
+            }
+
+            input {
+                color: var(--white);
+                background: transparent;
+                outline: 0;
+                border: 0;
+                flex-grow: 1;
+                padding-left: 2rem;
+            }
+        }
+    }
+
+    &--model {
+        img {
+            width: 19rem;
+            height: 45rem;
+
+            @include xl {
+                width: 11rem;
+                height: 30rem;
+            }
+
+            @include sm {
+                width: 8rem;
+                height: 20rem;
+            }
+        }
+    }
+
+    &-5 {
+        padding-top: 24rem;
+
+        @include xl {
+            padding-top: 20rem;
+        }
+        @include sm {
+            padding-top: 14rem;
+        }
+    }
+}

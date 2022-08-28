@@ -1,0 +1,96 @@
+$breakpoints: (
+    'xs': 0,
+    'sm': 576px,
+    'md': 768px,
+    'lg': 992px,
+    'xl': 1200px,
+    'xxl': 1400px,
+);
+
+// desktop first
+
+@mixin xs {
+    @media (max-width: map-get($breakpoints, 'xs')) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media (max-width: map-get($breakpoints, 'sm')) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media (max-width: map-get($breakpoints, 'md')) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media (max-width: map-get($breakpoints, 'lg')) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media (max-width: map-get($breakpoints, 'xl')) {
+        @content;
+    }
+}
+
+@mixin xxl {
+    @media (max-width: map-get($breakpoints, 'xxl')) {
+        @content;
+    }
+}
+
+@mixin breakpoint($bp: 0) {
+    @media (max-width: $bp) {
+        @content;
+    }
+}
+
+// moblile first
+
+@mixin M-xs {
+    @media (min-width: map-get($breakpoints, 'xs')) {
+        @content;
+    }
+}
+
+@mixin M-sm {
+    @media (min-width: map-get($breakpoints, 'sm')) {
+        @content;
+    }
+}
+
+@mixin M-md {
+    @media (min-width: map-get($breakpoints, 'md')) {
+        @content;
+    }
+}
+
+@mixin M-lg {
+    @media (min-width: map-get($breakpoints, 'lg')) {
+        @content;
+    }
+}
+
+@mixin M-xl {
+    @media (min-width: map-get($breakpoints, 'xl')) {
+        @content;
+    }
+}
+
+@mixin M-xxl {
+    @media (min-width: map-get($breakpoints, 'xxl')) {
+        @content;
+    }
+}
+
+@mixin M-breakpoint($bp: 0) {
+    @media (min-width: $bp) {
+        @content;
+    }
+}
